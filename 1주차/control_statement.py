@@ -62,7 +62,7 @@ for i in lsV5:
 print(ls)
 
 
-## for문을 이용해 별찍기를  출력하라
+## for문을 이용해 별찍기
 
 length = 5 # 길이
 for i in range(length):
