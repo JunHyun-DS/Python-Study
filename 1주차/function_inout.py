@@ -181,8 +181,6 @@ def change(put, sum):
 
 # 출력함수
 def prt(put, change_cnt, change1, sum, num_ls):
-
-    
     print('\ninput : ', put, '원', sep='')
     print('price: ', sum, sep='')
     print('output : ', change1, '원', sep='')
