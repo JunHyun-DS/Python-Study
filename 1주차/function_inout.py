@@ -209,7 +209,6 @@ change_cnt = change[1]
 # 출력
 prt(put, change_cnt, change1, sum, num_ls)
 
-
 ### 이차방정식의 근을 구하는 함수를 만들어라. 제곱근은 math 라이브러리 활용!
 
 import math
@@ -230,11 +229,8 @@ def formula(a,b,c):
 
     return([quadratic_formula_plus, quadratic_formula_minus])
 
-
 coef = quest()
 
 x = formula(coef[0], coef[1], coef[2])
 print('input : ', coef[0], 'x^2', '+',coef[1], 'x', coef[2], sep='')
 print('output : ','x1 = ', x[0], ', x2 = ', x[1], sep='')
-
-
