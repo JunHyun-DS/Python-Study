@@ -89,7 +89,12 @@ def calculate():
     return(first, inp, oper, num)
 
 # 식의 표현함수
-def express(inp, oper, first):
+def expression():
+    cal = list(calculate())
+    first = cal[0]  # 첫 숫자
+    inp = cal[1]  # 계산할 숫자
+    oper = cal[2]  # 연산자
+    num = cal[3]
     express = [first]
     for i in range(len(inp)): # 식을 express라는 변수에 대입
         express.append(oper[i])
@@ -97,24 +102,18 @@ def express(inp, oper, first):
 
     express = map(str, express) # int, string형이 섞여있어서 안에있는 데이터를 문자열로 형변환
     express = ' '.join(express) # list(문자열)를 str형으로 표현
-    return(express)
+    return(express, num)
 
 # 출력함수
-def prt(express, num):
+def prt():
+    exp = expression()
+    express = exp[0]
+    num = exp[1]
     print('input: ', express, sep='')
     print('output: ', num, sep='')
 
-cal = list(calculate())
-first = cal[0] # 첫 숫자
-inp = cal[1] # 계산할 숫자
-oper = cal[2] # 연산자
-output = cal[3] # 결과
-
-# 식의 표현
-exp = express(inp, oper, first)
-
-# 출력
-prt(exp, output)
+# 결과 출력 
+prt()
 
 ## 거스름돈 함수를 만들어라. 금액을 입력하면 거스름돈을 출력해야한다.
 
