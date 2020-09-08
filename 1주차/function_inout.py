@@ -227,8 +227,11 @@ def formula(a,b,c):
 
     return([quadratic_formula_plus, quadratic_formula_minus])
 
-coef = quest()
-
-x = formula(coef[0], coef[1], coef[2])
-print('input : ', coef[0], 'x^2', '+',coef[1], 'x', coef[2], sep='')
-print('output : ','x1 = ', x[0], ', x2 = ', x[1], sep='')
+def prt():
+    coef = quest()
+    x = formula(coef[0], coef[1], coef[2])
+    print('input : ', coef[0], 'x^2', '+', coef[1], 'x', coef[2], sep='')
+    print('output : ', 'x1 = ', x[0], ', x2 = ', x[1], sep='')
+    
+# 결과 및 출력
+prt()    
