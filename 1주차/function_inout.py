@@ -167,7 +167,12 @@ def start():
     return put, sum, num_ls # 구매한 개수
 
 # 거스름돈 반환 함수
-def change(put, sum):
+def change():
+    start0 = start()
+    put = start0[0]
+    sum = start0[1]
+    num_ls = start0[2]
+
     change_cnt = [0, 0, 0, 0, 0, 0]  # 거스름돈 지페 개수
     change = put - sum  # 거스름돈
     change1 = put - sum  # 출력용 거스름돈
@@ -177,10 +182,16 @@ def change(put, sum):
         change_cnt[i] = (change // change_ls[i]) # 몫
         change -= (change_ls[i]*change_cnt[i]) # 나머지
 
-    return change1, change_cnt
+    return change1, change_cnt, put, sum, num_ls
 
 # 출력함수
-def prt(put, change_cnt, change1, sum, num_ls):
+def prt():
+    change0 = change()
+    change1 = change0[0]
+    change_cnt = change0[1]
+    put = change0[2]
+    sum = change0[3]
+    num_ls = change0[4]
     print('\ninput : ', put, '원', sep='')
     print('price: ', sum, sep='')
     print('output : ', change1, '원', sep='')
@@ -194,18 +205,9 @@ def prt(put, change_cnt, change1, sum, num_ls):
     for i in range(len(price)):
         print(price[i], '원 : ', sep='', end='')
         print(num_ls[i], '개', sep='')
-
-# 변수 생성
-start = start()
-put = start[0]
-sum = start[1]
-num_ls = start[2]
-change = change(put, sum)
-change1 = change[0]
-change_cnt = change[1]
-
-# 출력
-prt(put, change_cnt, change1, sum, num_ls)
+        
+# 결과 출력
+prt()
 
 ### 이차방정식의 근을 구하는 함수를 만들어라. 제곱근은 math 라이브러리 활용!
 
