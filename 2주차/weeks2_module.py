@@ -15,6 +15,10 @@ def cal():
     while 1:
         try:
             a = int(input())  # 숫자1 입력부
+            if a == 0:
+                print('계산기가 종료되었습니다.')
+                break
+                
             b = input()  # 연산자 입력부
             c = int(input())  # 숫자2 입력부
             if b == "+":
